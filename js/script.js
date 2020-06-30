@@ -268,4 +268,9 @@ function showModalByScroll() {
             });
         });
     }
+    
+    function showThanksModal() {
+
+    } 
+        
 });
