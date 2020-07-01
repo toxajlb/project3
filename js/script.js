@@ -43,7 +43,7 @@ window.addEventListener('DOMContentLoaded', function() {
     
     // Timer
 
-   const deadline = '2020-07-01';
+   const deadline = '2020-07-15';
 
    function getTimeRemaining(endtime) {
         const t = Date.parse(endtime) - Date.parse(new Date()),
@@ -190,7 +190,7 @@ function showModalByScroll() {
         'Меню "Фитнес"',
         'Меню "Фитнес" - это новый подход к приготовлению блюд: больше свежих овощей и фруктов. Продукт активных и здоровых людей. Это абсолютно новый продукт с оптимальной ценой и высоким качеством!',
         8.5,
-        '.menu .container',
+        '.menu .container'
     ).render();
 
     new MenuCard(
@@ -302,6 +302,10 @@ function showModalByScroll() {
             prevModalDialog.classList.remove('hide');
             closeModal();
         }, 4000);
-    } 
+    }
+    
+    fetch('http://localhost:3000/menu')
+        .then(data => data.json())
+        .then(res => console.log(res));
         
 });
