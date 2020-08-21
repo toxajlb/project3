@@ -339,7 +339,7 @@ function showModalByScroll() {
         total = document.querySelector('#total'),
         current = document.querySelector('#current'),
         slidesWrapper = document.querySelector('.offer__slider-wrapper'),
-        slidesField = document.querySelector('offer__slider-inner'),
+        slidesField = document.querySelector('.offer__slider-inner'),
         width = window.getComputedStyle(slidesWrapper).width;
 
         let slideIndex = 1;
@@ -350,9 +350,10 @@ function showModalByScroll() {
             current.textContent = `0${slideIndex}`;
         }else {
              total.textContent = slides.length;
+             current.textContent = slideIndex;
         }
 
-        slidesField.style.width = 100 * slides.lenght + '%';
+        slidesField.style.width = 100 * slides.length + '%';
         slidesField.style.display = 'flex';
         slidesField.style.transition = '0,5s all';
 
@@ -394,7 +395,7 @@ function showModalByScroll() {
             slidesField.style.transform = `translateX(-${offset}px)`;
 
             if (slideIndex == 1) {
-                slideIndex = slides.lenght;
+                slideIndex = slides.length;
             } else {
                 slideIndex--;
             }
